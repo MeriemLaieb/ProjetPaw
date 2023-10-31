@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-
-export class Login extends Component {
-  render() {
+import image from './image.png'
+import Logo2 from './Logo2.png'
+//import './App.css';
+ function Login () {  
     return (
-      <div>
-        <h1>hi</h1>
-        <h1>hello</h1>
+        
+      <div className='header' >
+       <nav><img src={Logo2} /></nav>
       </div>
-    )
-  }
+    );
+  
 }
 
 export default Login
