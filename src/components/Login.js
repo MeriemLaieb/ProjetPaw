@@ -7,16 +7,14 @@ import Logo2 from './Logo2.png';
 
 function Login(){
     return (
-
       <div className='header'>
        <nav><img src={Logo2} /></nav> 
-       
-        <Formulaire/>
-      
+       <form>
+     <Formulaire />
+     </form>
        </div>
        ); 
        }
     export default Login;
-
 
 
