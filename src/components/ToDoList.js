@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Logo2 from './Logo2.png';
 
-function ToDoList() {
+
+function App() {
   const [task, setTask] = useState('');
   const [category, setCategory] = useState('');
   const [deadline, setDeadline] = useState('');
@@ -26,7 +27,6 @@ function ToDoList() {
 
   return (
     <div className="Todo">
-      
       <div className="sidebar">
         <ul>
           <li>My Day</li>
@@ -35,32 +35,40 @@ function ToDoList() {
           <li>Categories</li>
           <li>Settings</li>
         </ul>
-        </div>
-        <nav>
-          <img src={Logo2} />
-        </nav>
+      </div>
+      <nav>
+        <img src={Logo2}/>
+      </nav>
       <div className="content">
-     
-        <h2>My Day</h2>
+
+        <h2>Daily Tasks</h2>
         <form onSubmit={handleSubmit}>
+        
           <input
             type="text"
             placeholder="Task"
             value={task}
             onChange={(e) => setTask(e.target.value)}
           />
+          
+          
           <input
             type="text"
             placeholder="Category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
+            autoFocus={true}
           />
+          
+          
           <input
             type="text"
             placeholder="Deadline"
             value={deadline}
             onChange={(e) => setDeadline(e.target.value)}
           />
+          
+          
           <button type="submit">Add Task</button>
         </form>
         <div className="tasks">
@@ -84,4 +92,4 @@ function ToDoList() {
   );
 }
 
-export default ToDoList;
+export default App;

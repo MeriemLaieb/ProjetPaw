@@ -18,8 +18,6 @@
   max-width: 100%; /* Ajustez la largeur de l'image */
   max-height: 400px; /* Ajustez la hauteur de l'image */
   position: absolute;
-  /*top: 50%;
-  left: 50%;*/
   transform: translate(-50%, -22%);
   align-items: center;
 }
@@ -37,11 +35,12 @@
   width: 100%;
   border: none;
   font-size: 17px;
-  border-bottom: 2px solid silver;
+  border-bottom: 2px solid rgb(238, 221, 221);
 }
 .formInput .formu label{
-  color: white;
+  color: rgb(7, 6, 6);
   display: block; 
+  font-weight: bold;
   margin-bottom: 5px;
   padding-right: 100px;
   
@@ -66,6 +65,11 @@ button{
   margin-top: 15px;
   margin-bottom: 30px;
 }
+button:hover{
+  color: white;
+  background-color: #02103c;
+  transition: 2s;
+}
 
 
 
@@ -84,8 +88,6 @@ button{
   max-width: 100%; /* Ajustez la largeur de l'image */
   max-height: 400px; /* Ajustez la hauteur de l'image */
   position:absolute;
-  /*top: 50%;
-  left: 50%;*/
   transform: translate(-50%, -22%);
   align-items: center;
   justify-content: center;
@@ -98,20 +100,15 @@ button{
 /* Styles for the sidebar menu */
 .Todo .sidebar {
   background: linear-gradient(to bottom,  rgba(255, 189, 89, 0.5),rgba(30, 6, 89, 0.5));
-  color: white;
+  color: rgb(10, 9, 9);
   width: 200px;
   padding: 20px;
   display: flex;
+  font-weight: bolder;
   flex-direction: column;
   align-items: center;
-  
+  text-decoration: underline;
 }
-
-/*.sidebar h1 {
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 10px;
-}*/
 
 .sidebar ul {
   list-style: none;
@@ -126,7 +123,7 @@ button{
 }
 
 .sidebar li:hover {
-  background-color: #555;
+  color:#ffbd59;
 }
 
 /* Styles for the content area */
@@ -139,7 +136,7 @@ button{
   font-size: 24px;
   margin-bottom: 20px;
   text-align: center;
-  color: #333;
+  color: #481111;
 }
 
 /* Styles for the task input form */
@@ -159,43 +156,43 @@ button{
   padding: 10px 10px;
   font-size: 16px;
   font-weight: bolder;
-  background-color: #c27bfb;
+  background-color: #acbae7;
   color: rgb(14, 14, 14);
   border: 2px;
   cursor: pointer;
 }
+.Todo button:hover{
+  background-color: #ffbd59;
+  transition: 2s;
+}
 
 /* Styles for individual task cards */
 .task {
-  /*display: flex;*/
-  align-items: center;
+ /*display: flex;*/
+   align-items: center;
   justify-content: space-between;
-  background-color: rgb(242, 184, 243); /* Couleur de fond beige */
-  border: 1px solid #45012c;
+  background-color: rgb(217, 221, 245); /* Couleur de fond beige */
+  border: 2px solid rgb(32, 6, 88);
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
+  font-weight: bold;
   transition: background-color 0.3s;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* Exemple de police de caractères */
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Exemple de police de caractères */
 }
 
-.task h3 {
-  font-size: 16px; /* Taille de la police pour le titre */
-  margin: 0;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
-  color: #3f0456; /* Couleur d'écriture pour le titre */
-}
+
 
 .task p {
   font-size: 14px; /* Taille de la police pour les détails */
   margin: 0;
-  color: #0d0d0d; /* Couleur d'écriture pour les détails */
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color:rgb(22, 2, 66); /* Couleur d'écriture pour les détails */
 }
 
 /* Styling for completed tasks */
 .task.done {
-  background-color: #9b5198; /* Couleur de fond pour les tâches terminées */
-  border: 1px solid #320139; /* Bordure pour les tâches terminées */
+  background-color: rgb(155, 117, 81); /* Couleur de fond pour les tâches terminées */
+  border: 2px solid #392601; /* Bordure pour les tâches terminées */
 }
-

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
       <div className="formInput">
         <form className="formu">
             <h2>Log In</h2>
-        <label htmlFor='mail'> email : </label>
+        <label htmlFor='mail'> Email : </label>
             <input type='email' id='mail' name='email' required value={email} onChange={(e)=> setEmail(e.target.value)}/> 
             <br/>
             <label htmlFor='pass'> Password : </label>
