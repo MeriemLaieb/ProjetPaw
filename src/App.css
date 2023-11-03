@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  
+ 
 }
 
 .header {
@@ -66,3 +66,136 @@ button{
   margin-top: 15px;
   margin-bottom: 30px;
 }
+
+
+
+
+
+/* Styles for the entire application */
+.Todo {
+  display: flex;
+  background-image: linear-gradient(rgba(198, 182, 111, 0.7), rgba(4,9,30,0.7)), url(./components/background.png);
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  
+}
+
+.Todo nav img {
+  max-width: 100%; /* Ajustez la largeur de l'image */
+  max-height: 400px; /* Ajustez la hauteur de l'image */
+  position:absolute;
+  /*top: 50%;
+  left: 50%;*/
+  transform: translate(-50%, -22%);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-left: 480px;
+
+}
+
+
+/* Styles for the sidebar menu */
+.Todo .sidebar {
+  background: linear-gradient(to bottom,  rgba(255, 189, 89, 0.5),rgba(30, 6, 89, 0.5));
+  color: white;
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/*.sidebar h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}*/
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 100px;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sidebar li:hover {
+  background-color: #555;
+}
+
+/* Styles for the content area */
+.content {
+  flex: 2;
+  padding: 150px;
+}
+
+.h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Styles for the task input form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Todo input {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.Todo button {
+  padding: 10px 10px;
+  font-size: 16px;
+  font-weight: bolder;
+  background-color: #c27bfb;
+  color: rgb(14, 14, 14);
+  border: 2px;
+  cursor: pointer;
+}
+
+/* Styles for individual task cards */
+.task {
+  /*display: flex;*/
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(242, 184, 243); /* Couleur de fond beige */
+  border: 1px solid #45012c;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* Exemple de police de caractères */
+}
+
+.task h3 {
+  font-size: 16px; /* Taille de la police pour le titre */
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: #3f0456; /* Couleur d'écriture pour le titre */
+}
+
+.task p {
+  font-size: 14px; /* Taille de la police pour les détails */
+  margin: 0;
+  color: #0d0d0d; /* Couleur d'écriture pour les détails */
+}
+
+/* Styling for completed tasks */
+.task.done {
+  background-color: #9b5198; /* Couleur de fond pour les tâches terminées */
+  border: 1px solid #320139; /* Bordure pour les tâches terminées */
+}
+

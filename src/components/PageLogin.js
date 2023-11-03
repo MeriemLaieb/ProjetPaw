@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
             <input type='password' id='pass' name='password' required value={pass} onChange={(e)=> setPass(e.target.value)}/> 
         <br/>
         <button type='submit'>Log in</button>
-        <span>You don't have account ?<a href='/Formulaire'>Sign Up</a></span> 
+        
         </form>
         </div>
     );
