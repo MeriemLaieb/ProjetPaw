@@ -1,22 +1,20 @@
-import React, { useState } from 'react';
-import Logo2 from './Logo2.png';
-
+import React, { useState } from "react";
+import Logo2 from "./Logo2.png";
+import Formulaire from "./Formulaire";
+import NavigationBar from "./Navigationbar";
 
 function App() {
-  const [task, setTask] = useState('');
-  const [category, setCategory] = useState('');
-  const [deadline, setDeadline] = useState('');
+  const [task, setTask] = useState("");
+  const [category, setCategory] = useState("");
+  const [deadline, setDeadline] = useState("");
   const [tasksList, setTasksList] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTasksList([
-      ...tasksList,
-      { task, category, deadline, done: false },
-    ]);
-    setTask('');
-    setCategory('');
-    setDeadline('');
+    setTasksList([...tasksList, { task, category, deadline, done: false }]);
+    setTask("");
+    setCategory("");
+    setDeadline("");
   };
 
   const handleToggle = (index) => {
@@ -27,31 +25,20 @@ function App() {
 
   return (
     <div className="Todo">
-      <div className="sidebar">
-        <ul>
-          <li>My Day</li>
-          <li>Planned</li>
-          <li>Priorities</li>
-          <li>Categories</li>
-          <li>Settings</li>
-        </ul>
-      </div>
-      <nav>
-        <img src={Logo2}/>
-      </nav>
+    <NavigationBar></NavigationBar>
+   
+            
+      
       <div className="content">
-
         <h2>Daily Tasks</h2>
         <form onSubmit={handleSubmit}>
-        
           <input
             type="text"
             placeholder="Task"
             value={task}
             onChange={(e) => setTask(e.target.value)}
           />
-          
-          
+
           <input
             type="text"
             placeholder="Category"
@@ -59,21 +46,19 @@ function App() {
             onChange={(e) => setCategory(e.target.value)}
             autoFocus={true}
           />
-          
-          
+
           <input
-            type="text"
+            type="date"
             placeholder="Deadline"
             value={deadline}
             onChange={(e) => setDeadline(e.target.value)}
           />
-          
-          
+
           <button type="submit">Add Task</button>
         </form>
         <div className="tasks">
           {tasksList.map((task, index) => (
-            <div key={index} className={`task ${task.done ? 'done' : ''}`}>
+            <div key={index} className={`task ${task.done ? "done" : ""}`}>
               <div className="task-details">
                 <h3>{task.task}</h3>
                 <p>Category: {task.category}</p>

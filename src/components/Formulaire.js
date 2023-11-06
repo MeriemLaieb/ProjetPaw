@@ -11,7 +11,8 @@ const Formulaire =()=>{
             <h2>Sign In</h2>
 
             <label htmlFor='nom'>Full Name :</label>
-            <input type='text' id='nom' name='a' required value={fname} onChange={(e)=> setName(e.target.value)}/> <br/>
+            <input type='text' id='nom' name='a' required value={fname} onChange={(e)=> setName(e.target.value)}
+            autoFocus={true}/> <br/>
             <label htmlFor='mail'> email : </label>
             <input type='email' id='mail' name='email' required value={email} onChange={(e)=> setEmail(e.target.value)}/> 
             <br/>
