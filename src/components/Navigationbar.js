@@ -6,7 +6,7 @@ function NavigationBar() {
     <header className="navbar">
       <nav className="nav-links">
         <a href="#">My Day</a>
-        <a href="#">Planned</a>
+        <a href="#">Plaanned</a>
       </nav>
    
       <img src={Logo2} alt="Logo" className="logo" />
