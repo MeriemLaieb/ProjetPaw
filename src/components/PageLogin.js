@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Formulaire from "./Formulaire";
 import NavigationBar from "./Navigationbar";
-
+//import ToDoList from "./ToDoList";
 
 function PageLogin() {
   const [email, setEmail] = useState("");
@@ -41,15 +41,18 @@ function PageLogin() {
             onChange={(e) => setPass(e.target.value)}
           />
           <br />
-          <button type="submit">Log in</button>
+          <button className="lo" type="submit">Log in</button>
           <div className="signup">
             <p>You don't have an account</p>
-            <button onClick={handleSignUpClick}>Sign up</button>
+            <button className="lo" onClick={handleSignUpClick}>Sign up</button>
           </div>
         </form>
       )}
+      
     </div>
+
   );
+ 
 }
 
 export default PageLogin;

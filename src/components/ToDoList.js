@@ -4,78 +4,62 @@ import Formulaire from "./Formulaire";
 import NavigationBar from "./Navigationbar";
 import PageLogin from "./PageLogin";
 
-function App() {
-  const [task, setTask] = useState("");
-  const [category, setCategory] = useState("");
-  const [deadline, setDeadline] = useState("");
-  const [tasksList, setTasksList] = useState([]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setTasksList([...tasksList, { task, category, deadline, done: false }]);
-    setTask("");
-    setCategory("");
-    setDeadline("");
-  };
-
-  const handleToggle = (index) => {
-    const newTasksList = [...tasksList];
-    newTasksList[index].done = !newTasksList[index].done;
-    setTasksList(newTasksList);
-  };
-
-  return (
-    <div className="Todo">
-    <NavigationBar></NavigationBar>
+function ToDoList(props) {
+    const [showInput, setShowInput] = useState(false);
+    const [task, setTask] = useState("");
+    const [tasksList, setTasksList] = useState([]);
    
-            
+    const handleAddTask = () => {
+      if (task.trim() !== "") { // pour verifier si la tache n'est pas un champs vide
+        setTasksList([...tasksList, { id: Date.now(), task, done: false }]);
+        setTask("");
+        setShowInput(false);
+      }
+    };
+    const handleToggle = (id) => {
+      const newTasksList = tasksList.map((item) =>
+        item.id === id ? { ...item, done: !item.done } : item
+      );
+      setTasksList(newTasksList);
+    };
+  
+    return (
+     
+      <>
       
-      <div className="content">
-        <h2>Daily Tasks</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Task"
-            value={task}
-            onChange={(e) => setTask(e.target.value)}
-          />
-
-          <input
-            type="text"
-            placeholder="Category"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            autoFocus={true}
-          />
-
-          <input
-            type="date"
-            placeholder="Deadline"
-            value={deadline}
-            onChange={(e) => setDeadline(e.target.value)}
-          />
-
-          <button type="submit">Add Task</button>
-        </form>
-        <div className="tasks">
-          {tasksList.map((task, index) => (
-            <div key={index} className={`task ${task.done ? "done" : ""}`}>
-              <div className="task-details">
-                <h3>{task.task}</h3>
-                <p>Category: {task.category}</p>
-                <p>Deadline: {task.deadline}</p>
-              </div>
+      <div className="tout" style={{ backgroundColor: props.backgroundColor }}>
+      <NavigationBar></NavigationBar>
+        <h3>{props.title}</h3>
+        <ul style={{ listStyle: "none", padding: 0 }}>
+          {tasksList.map((item) => (
+            <li key={item.id}>
               <input
                 type="checkbox"
-                checked={task.done}
-                onChange={() => handleToggle(index)}
+                checked={item.done}
+                onChange={() => handleToggle(item.id)}
               />
-            </div>
+              <span className={item.done ? "done" : ""}>{item.task}</span>
+            </li>
           ))}
-        </div>
+        </ul>
+        {showInput ? (
+          <div>
+            <input
+              type="text"
+              placeholder="Enter task"
+              value={task}
+              onChange={(e) => setTask(e.target.value)}
+              autoFocus
+            />
+            <br/>
+            <button onClick={handleAddTask}>OK</button>
+          </div>
+        ) : (
+          <button onClick={() => setShowInput(true)}>Add Task</button>
+        )}
       </div>
-    </div>
-  );
-}
-
-export default App;
+      </>
+    );
+  }
+  
+  export default ToDoList;

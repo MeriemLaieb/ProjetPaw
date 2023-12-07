@@ -5,7 +5,7 @@ function NavigationBar() {
   return (
     <header className="navbar">
       <nav className="nav-links">
-        <a href="#">My Day</a>
+        <a href="/ToDoList">My Day</a>
         <a href="#">Plaanned</a>
       </nav>
    
