@@ -1,5 +1,5 @@
 import ToDoList from "./ToDoList";
-
+import Menu from "./Menu";
 function Backg(){
   
   
@@ -13,6 +13,7 @@ function Backg(){
       <ToDoList title="Health" backgroundColor="#F3E7DA"/>
       <ToDoList title="Personnal" backgroundColor="#F5DF4D"/>
       </main>
+     <Menu/>
         </div>
     )
 }

@@ -52,12 +52,12 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background-image: linear-gradient(
-      rgba(198, 182, 111, 0.7),
-      rgba(4, 9, 30, 0.7)
-    ),
-    url(./components/background.png);
+  background: color #fdfd96;
+  margin: 0;
+  padding: 0;
 }
+ 
+
 
 /* Rest of your existing styles */
 .header nav img {
@@ -148,7 +148,7 @@
   margin-left: 480px;
 }
 
-.Todo .sidebar {
+/*.Todo .sidebar {
   background: linear-gradient(
     to bottom,
     rgba(255, 189, 89, 0.5),
@@ -178,7 +178,7 @@
 
 .sidebar li:hover {
   color: #ffbd59;
-}
+}*/
 
 .content {
   flex: 2;
@@ -219,7 +219,7 @@
   transition: 2s;
 }
 
-.task {
+/*.task {
   align-items: center;
   justify-content: space-between;
   background-color: rgb(217, 221, 245);
@@ -230,7 +230,7 @@
   font-weight: bold;
   transition: background-color 0.3s;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
+}*/
 
 .task p {
   font-size: 14px;
@@ -257,13 +257,7 @@ div .tout{
    width: 290px; 
   height:auto
 }
-.bckg {
-  background-image: linear-gradient(
-      rgba(198, 182, 111, 0.7),
-      rgba(4, 9, 30, 0.7)
-    ),
-    url(./components/background.png);
-}
+
 .sid ul {
   list-style: none;
   padding: 0;
@@ -288,4 +282,88 @@ div .tout{
   text-decoration: underline;
   margin-bottom: 500px;
   margin-left: 50px;
+}
+
+.box-start {
+ padding: 10px 20px;
+ padding-top: 0%;
+ margin-left: 80%;
+ margin-right: 20px;
+  margin-top: -400%;
+  width: 200px;
+  height:150px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  border-radius: 29px;
+  background: #132644;
+  box-shadow:  -16px 16px 39px #0c1729,
+               16px -16px 39px #1a355f;
+ 
+}
+.titre{
+  
+  font-size: 40px;
+  color:#09043d;
+  
+  margin-right: 500px;
+}
+ .text {
+  padding-top: 15%;
+  display: flex;
+  margin-right: 500px;  
+  margin-left: 100px;
+  text-align: center;
+  position: relative;
+  color: #09043d;
+}
+
+.btn {
+  width: 140px;
+  height: 50px;
+  background: linear-gradient(to top, #00154c, #12376e, #23487f);
+  color: #fff;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.btn span {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: top 0.5s;
+}
+
+.btn-text-one {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.btn-text-two {
+  position: absolute;
+  width: 100%;
+  top: 150%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.btn:hover .btn-text-one {
+  top: -100%;
+}
+
+.btn:hover .btn-text-two {
+  top: 50%;
+}
+.side {
+  height: 100%;
+  width: 250px;
+  background-color: aqua;
 }

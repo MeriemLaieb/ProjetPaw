@@ -1,6 +1,4 @@
 import "./App.css";
-
-
 import ToDoList from "./components/ToDoList";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
@@ -14,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Logo></Logo>
-      <Backg/>
+    
     </div>
   );
 }

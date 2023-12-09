@@ -1,22 +1,27 @@
 import React, { useState } from "react";
 import Formulaire from "./Formulaire";
 import NavigationBar from "./Navigationbar";
-//import ToDoList from "./ToDoList";
+import Backg from "./backgrnd";
 
 function PageLogin() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [showSignUpForm, setShowSignUpForm] = useState(false);
- 
+ const [showToDoList, setShowToDoList]= useState(false);
 
   const handleSignUpClick = () => {
     setShowSignUpForm(true);
   };
+  const handleToDoClick = () =>{
+    setShowToDoList(true);
+  }
 
   return (
     <div className="formInput">
-      
-      {showSignUpForm ? (
+      <NavigationBar></NavigationBar>
+      {showToDoList ? (
+      <Backg/>) : (
+      showSignUpForm ? (
         <Formulaire />
       ) : (
         <form className="formu">
@@ -41,16 +46,17 @@ function PageLogin() {
             onChange={(e) => setPass(e.target.value)}
           />
           <br />
-          <button className="lo" type="submit">Log in</button>
+          <button className="lo" type="submit" onClick={handleToDoClick}>Log in</button>
           <div className="signup">
             <p>You don't have an account</p>
             <button className="lo" onClick={handleSignUpClick}>Sign up</button>
           </div>
         </form>
-      )}
-      
+        
+      )
+      )
+}
     </div>
-
   );
  
 }
