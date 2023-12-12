@@ -1,6 +1,8 @@
 import { useState } from "react";
 import PageLogin from "./PageLogin";
 import Backg from "./backgrnd";
+
+
 const Formulaire =()=>{
     const [fname, setName]=useState('')
     const [email, setEmail]=useState('')

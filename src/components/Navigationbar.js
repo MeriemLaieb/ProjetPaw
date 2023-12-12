@@ -15,6 +15,7 @@ function NavigationBar() {
         <a href="#">About Us</a>
         <a href="#">Settings</a>
       </nav>
+    
     </header>
   );
 }

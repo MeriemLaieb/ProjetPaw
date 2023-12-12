@@ -251,9 +251,8 @@ div .tout{
   margin-top: 5px;
   display: inline-block;
   position: relative;
-  /*background-color: #94cde2;*/
   text-align:center; 
-  /*border: solid #94cde2;*/
+  border-radius: 29px;
    width: 290px; 
   height:auto
 }
@@ -361,9 +360,4 @@ div .tout{
 
 .btn:hover .btn-text-two {
   top: 50%;
-}
-.side {
-  height: 100%;
-  width: 250px;
-  background-color: aqua;
 }

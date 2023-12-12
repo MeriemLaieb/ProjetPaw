@@ -7,15 +7,18 @@ function PageLogin() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [showSignUpForm, setShowSignUpForm] = useState(false);
- const [showToDoList, setShowToDoList]= useState(false);
+  const [showToDoList, setShowToDoList]= useState(false);
+  const [showDays, setShowDays] = useState(false);
 
   const handleSignUpClick = () => {
     setShowSignUpForm(true);
   };
+
   const handleToDoClick = () =>{
     setShowToDoList(true);
   }
 
+ 
   return (
     <div className="formInput">
       <NavigationBar></NavigationBar>
@@ -47,6 +50,7 @@ function PageLogin() {
           />
           <br />
           <button className="lo" type="submit" onClick={handleToDoClick}>Log in</button>
+          
           <div className="signup">
             <p>You don't have an account</p>
             <button className="lo" onClick={handleSignUpClick}>Sign up</button>
@@ -56,6 +60,7 @@ function PageLogin() {
       )
       )
 }
+    
     </div>
   );
  

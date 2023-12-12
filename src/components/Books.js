@@ -6,75 +6,72 @@ import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import PageLogin from "./PageLogin";
 
-
-function ToDoList(props) {
+function Books(props) {
   const [showInput, setShowInput] = useState(false);
-  const [task, setTask] = useState("");
-  const [tasksList, setTasksList] = useState([]);
-  const [editTaskId, setEditTaskId] = useState(null);
-  const [editedTask, setEditedTask] = useState("");
-  
-  const handleAddTask = () => {
-    if (task.trim() !== "") {
-      setTasksList([...tasksList, { id: Date.now(), task, done: false }]);
-      setTask("");
+  const [book, setBook] = useState("");
+  const [booksList, setBooksList] = useState([]);
+  const [editBookId, setEditBookId] = useState(null);
+  const [editedBook, setEditedBook] = useState("");
+
+  const handleAddBook = () => {
+    if (book.trim() !== "") {
+      setBooksList([...booksList, { id: Date.now(), book, read: false }]);
+      setBook("");
       setShowInput(false);
     }
   };
 
   const handleToggle = (id) => {
-    const newTasksList = tasksList.map((item) =>
-      item.id === id ? { ...item, done: !item.done } : item
+    const newBooksList = booksList.map((item) =>
+      item.id === id ? { ...item, read: !item.read } : item
     );
-    setTasksList(newTasksList);
+    setBooksList(newBooksList);
   };
 
   const handleEdit = (id) => {
-    setEditTaskId(id);
-    setEditedTask(tasksList.find((item) => item.id === id)?.task || "");
+    setEditBookId(id);
+    setEditedBook(booksList.find((item) => item.id === id)?.book || "");
   };
 
   const handleSaveEdit = (id) => {
-    const newTasksList = tasksList.map((item) =>
-      item.id === id ? { ...item, task: editedTask } : item
+    const newBooksList = booksList.map((item) =>
+      item.id === id ? { ...item, book: editedBook } : item
     );
-    setTasksList(newTasksList);
-    setEditTaskId(null);
+    setBooksList(newBooksList);
+    setEditBookId(null);
   };
 
   const handleDelete = (id) => {
-    const newTasksList = tasksList.filter((item) => item.id !== id);
-    setTasksList(newTasksList);
+    const newBooksList = booksList.filter((item) => item.id !== id);
+    setBooksList(newBooksList);
   };
-    
 
   return (
     <>
-      
       <div className="tout" style={{ backgroundColor: props.backgroundColor }}>
         <NavigationBar></NavigationBar>
         <h3>{props.title}</h3>
         <ul style={{ listStyle: "none", padding: 0 }}>
-          {tasksList.map((item) => (
+          {booksList.map((item) => (
             <li key={item.id}>
               <input
                 type="checkbox"
-                checked={item.done}
+                checked={item.read}
                 onChange={() => handleToggle(item.id)}
               />
-              {editTaskId === item.id ? (
+              {editBookId === item.id ? (
                 <div>
                   <input
                     type="text"
-                    value={editedTask}
-                    onChange={(e) => setEditedTask(e.target.value)}
+                    value={editedBook}
+                    onChange={(e) => setEditedBook(e.target.value)}
                   />
                   <button onClick={() => handleSaveEdit(item.id)}>OK</button>
                 </div>
               ) : (
-                <span className={item.done ? "done" : ""}>{item.task}</span>
+                <span className={item.read ? "read" : ""}>{item.book}</span>
               )}
-              {editTaskId !== item.id && (
+              {editBookId !== item.id && (
                 <>
                   <button type="button" onClick={() => handleEdit(item.id)}><CiEdit /></button>
                   <button onClick={() => handleDelete(item.id)}><MdDelete/></button>
@@ -87,21 +84,20 @@ function ToDoList(props) {
           <div>
             <input
               type="text"
-              placeholder="Enter task"
-              value={task}
-              onChange={(e) => setTask(e.target.value)}
+              placeholder="Enter book title"
+              value={book}
+              onChange={(e) => setBook(e.target.value)}
               autoFocus
             />
             <br />
-            <button onClick={handleAddTask}>OK</button>
+            <button onClick={handleAddBook}>OK</button>
           </div>
         ) : (
-          <button onClick={() => setShowInput(true)}>Add Task</button>
+          <button onClick={() => setShowInput(true)}>Add Book</button>
         )}
-        
       </div>
     </>
   );
 }
 
-export default ToDoList;
+export default Books;
