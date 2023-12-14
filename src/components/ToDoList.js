@@ -49,10 +49,9 @@ function ToDoList(props) {
     
 
   return (
-    <>
-      
+    <span className="todo">
       <div className="tout" style={{ backgroundColor: props.backgroundColor }}>
-        <NavigationBar></NavigationBar>
+        <NavigationBar/>
         <h3>{props.title}</h3>
         <ul style={{ listStyle: "none", padding: 0 }}>
           {tasksList.map((item) => (
@@ -100,7 +99,7 @@ function ToDoList(props) {
         )}
         
       </div>
-    </>
+    </span>
   );
 }
 

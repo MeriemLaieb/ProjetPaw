@@ -2,6 +2,9 @@ import { useState } from "react"
 import PageLogin from "./PageLogin";
 import Logo2 from "./Logo2.png";
 import NavigationBar from "./Navigationbar";
+import Tasky3 from "./Tasky3.png";
+import Backg from "./Backg.jpg";
+
 function First (){
     const  [showLogin, setShowLogin]= useState(false);
     const handlePageLogin = () =>{
@@ -9,7 +12,7 @@ function First (){
     }
     return(
         <div className="first"> 
-            <NavigationBar/>
+           <NavigationBar/>
         {showLogin ? 
             (
                 <PageLogin />

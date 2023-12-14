@@ -21,7 +21,7 @@ function PageLogin() {
  
   return (
     <div className="formInput">
-      <NavigationBar></NavigationBar>
+      <NavigationBar/>
       {showToDoList ? (
       <Backg/>) : (
       showSignUpForm ? (

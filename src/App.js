@@ -8,12 +8,12 @@ import Backg from "./components/backgrnd";
 
 function App() {
   return (
-    <Router>
+    
       <div className="App">
         <Logo />
         
       </div>
-    </Router>
+    
   );
 }
 

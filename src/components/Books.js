@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Logo2 from "./Logo2.png";
 import Formulaire from "./Formulaire";
-import NavigationBar from "./Navigationbar";
+//import NavigationBar from "./Navigationbar";
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import PageLogin from "./PageLogin";
@@ -47,9 +47,9 @@ function Books(props) {
   };
 
   return (
-    <>
+    <span className="book">
       <div className="tout" style={{ backgroundColor: props.backgroundColor }}>
-        <NavigationBar></NavigationBar>
+        
         <h3>{props.title}</h3>
         <ul style={{ listStyle: "none", padding: 0 }}>
           {booksList.map((item) => (
@@ -96,7 +96,7 @@ function Books(props) {
           <button onClick={() => setShowInput(true)}>Add Book</button>
         )}
       </div>
-    </>
+    </span>
   );
 }
 

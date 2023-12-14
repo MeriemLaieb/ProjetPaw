@@ -4,17 +4,24 @@ import Corbeille from "./Corbeille";
 import { FaTrashAlt } from "react-icons/fa";
 import Notes from "./Notes";
 import Books from "./Books";
-
+import Nouv from "./Nouv";
 function Backg(){
     const [corbeille, setCorbeille] = useState(false);
     const [todo, setTodo]= useState(true);
     const [books, setBooks]= useState(false);
     const [notes, setNotes]= useState(false);
+    const [nouv, setNouv] = useState(false);
       const showCorbeille = () => {
         setCorbeille(true);
       }
       const dontShowCorbeille = () => {
         setCorbeille(false);
+      }
+      const showNouv = () => {
+        setNouv(true);
+      }
+      const dontShowNouv = () => {
+        setNouv(false);
       }
       const dontShowTodo = () => {
         setTodo(false);
@@ -31,31 +38,40 @@ function Backg(){
       const dontShowNotes = () => {
         setNotes(false);
       } 
-      
+      const handleNouv = () => {
+        showNouv();
+        dontShowBooks();
+        dontShowCorbeille();
+        dontShowNotes();
+        dontShowTodo();
+      } 
       const handleCorbeille = () => {
         showCorbeille();
         dontShowTodo();
         dontShowBooks();
         dontShowNotes();
+        dontShowNouv();
       };
       const handleNotes = () => {
         showNotes();
         dontShowTodo();
         dontShowCorbeille();
         dontShowBooks();
-        
+        dontShowNouv();
       };
       const handleBooks = () => {
         showBooks();
         dontShowTodo();
         dontShowCorbeille();
         dontShowNotes();
+        dontShowNouv();
       }
       const handleTodo = () => {
         setTodo(true);
         dontShowCorbeille();
         dontShowBooks();
         dontShowNotes();
+        dontShowNouv();
       };
     return(
         <div className="bckg">
@@ -78,12 +94,12 @@ function Backg(){
             <button onClick={handleCorbeille}><FaTrashAlt /></button>
         )
         }
-        <aside>
+        <aside className="sid">
         {notes ?
         (<Notes/>)
         :
         (
-            <button onClick={handleNotes}>Notes</button>
+            <button onClick={handleNotes} className="sid-btn">Notes</button>
         )
         }
         {books ?
@@ -93,15 +109,23 @@ function Backg(){
         <Books title="Personal Development"  backgroundColor="  #b2e57b"/>
         <Books title="Science" backgroundColor="#c7e8f3" />
         <Books title="Religious" backgroundColor="#ffd966"/>
-        
         </main>
         )
         :
         (
-         <button onClick={handleBooks}>Books</button>
+         <button type="button" onClick={handleBooks} className="sid-btn">Books</button>
         )
         }
-        <button type="button" onClick={handleTodo}>Ajouter une tâche</button>
+
+        {nouv ?
+        (<Nouv/>)
+        :
+        (
+          <button className="sid-btn" onClick={handleNouv}>Nouv</button>
+        )
+
+        }
+        <button type="button" className="sid-btn" onClick={handleTodo}>Ajouter une tâche</button>
         </aside>
         </div>
     )
