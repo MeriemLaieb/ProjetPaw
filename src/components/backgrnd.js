@@ -75,25 +75,8 @@ function Backg(){
       };
     return(
         <div className="bckg">
-            {todo ?(
-        <main>
-            <h1>Daily Tasks</h1>
-        
-        <ToDoList title="Sport" backgroundColor="#CBEFB6" />
-        <ToDoList title="Study"  backgroundColor=" #B6D8F2"/>
-        <ToDoList title="Work" backgroundColor="#CACACA" />
-        <ToDoList title="Health" backgroundColor="#F3E7DA"/>
-        <ToDoList title="Personnal" backgroundColor="#F5DF4D"/>
-       
-      </main>
-        ):("")}
-        {corbeille ?
-        (<Corbeille/>)
-        :
-        (
-            <button onClick={handleCorbeille}><FaTrashAlt /></button>
-        )
-        }
+           
+        <span className="sidebar" >
         <aside className="sid">
         {notes ?
         (<Notes/>)
@@ -127,6 +110,26 @@ function Backg(){
         }
         <button type="button" className="sid-btn" onClick={handleTodo}>Ajouter une tâche</button>
         </aside>
+        </span>
+        {todo ?(
+        <main>
+            <h1>Daily Tasks</h1>
+        
+        <ToDoList title="Sport" backgroundColor="#CBEFB6" />
+        <ToDoList title="Study"  backgroundColor=" #B6D8F2"/>
+        <ToDoList title="Work" backgroundColor="#CACACA" />
+        <ToDoList title="Health" backgroundColor="#F3E7DA"/>
+        <ToDoList title="Personnal" backgroundColor="#F5DF4D"/>
+       
+      </main>
+        ):("")}
+         {corbeille ?
+        (<Corbeille/>)
+        :
+        (
+            <button onClick={handleCorbeille}><FaTrashAlt /></button>
+        )
+        }
         </div>
     )
 }
