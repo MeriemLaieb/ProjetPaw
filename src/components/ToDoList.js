@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo2 from "./Logo2.png";
 import Formulaire from "./Formulaire";
 import NavigationBar from "./Navigationbar";
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import PageLogin from "./PageLogin";
-
-
+import DateComponent from "./Date";
+import { FaPlus } from "react-icons/fa";
 function ToDoList(props) {
   const [showInput, setShowInput] = useState(false);
   const [task, setTask] = useState("");
@@ -46,12 +46,13 @@ function ToDoList(props) {
     const newTasksList = tasksList.filter((item) => item.id !== id);
     setTasksList(newTasksList);
   };
-    
+ 
 
   return (
-    <span className="todo">
-      <div className="tout" style={{ backgroundColor: props.backgroundColor }}>
+    
+      <span className="tout" style={{ backgroundColor: props.backgroundColor }}>
         <NavigationBar/>
+        
         <h3>{props.title}</h3>
         <ul style={{ listStyle: "none", padding: 0 }}>
           {tasksList.map((item) => (
@@ -75,8 +76,8 @@ function ToDoList(props) {
               )}
               {editTaskId !== item.id && (
                 <>
-                  <button type="button" onClick={() => handleEdit(item.id)}><CiEdit /></button>
-                  <button onClick={() => handleDelete(item.id)}><MdDelete/></button>
+                  <button className="btn-add" type="button" onClick={() => handleEdit(item.id)}><CiEdit /></button>
+                  <button className="btn-add" onClick={() => handleDelete(item.id)}><MdDelete/></button>
                 </>
               )}
             </li>
@@ -95,11 +96,10 @@ function ToDoList(props) {
             <button onClick={handleAddTask}>OK</button>
           </div>
         ) : (
-          <button onClick={() => setShowInput(true)}>Add Task</button>
+         <button className="btn-add" onClick={() => setShowInput(true)}><FaPlus />Add Task</button>
         )}
         
-      </div>
-    </span>
+      </span>
   );
 }
 

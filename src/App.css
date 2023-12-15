@@ -39,9 +39,9 @@
 }
 
 /* Rest of your existing styles */
-.App {
+ .App {
   text-align: center;
-}
+} 
 
 .header {
   min-height: 99.9vh;
@@ -252,7 +252,7 @@ div .tout{
   display: inline-block;
   position: relative;
   text-align:center; 
-  border-radius: 29px;
+  /* border-radius: 29px; */
    width: 290px; 
   height:auto
 
@@ -268,17 +268,19 @@ div .tout{
 }
 .sid{
   background-color: rgba(10, 3, 30, 0.92);
-  color: rgb(10, 9, 9);
-  width: 200px;
-  margin-top: 200px;
+  color: #0a0909;
+  margin-top: 300px;
   display: flex;
   font-weight: bolder;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-decoration: underline;
   margin-bottom: 500px;
-  margin-left: 50px; 
+  /* margin-left: 50px;  */
   height: 80%;
+  width: 300px;
+  margin: left;
 }
 
 .box-start {
@@ -298,10 +300,8 @@ div .tout{
   16px -16px 39px #1a355f;
 }
 .titre{
-  
   font-size: 40px;
   color:#09043d;
-  
   margin-right: 500px;
 }
  .text {
@@ -370,12 +370,18 @@ div .tout{
   width: 100%;
   height: 100%;
   display: flex;
+  align-items: center;
 }
-.sid-btn{
+/* .sid-btn{
   border: none;
-}
+} */
 .note{
   margin-left: 500px;
+  display: inline-block;
+}
+.nouv{
+  margin-left: 900px;
+  display: inline-block;
 }
 .book{
   margin-left: 1200px;
@@ -384,3 +390,16 @@ div .tout{
   margin-right: 50px;
   margin-top: 5px;*/
 }  
+
+.tout{
+  display: inline-block;
+  margin-top: 100px;
+  align-items: center;
+  justify-content: center;
+}
+.btn-add{
+  border-radius: 29px;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}

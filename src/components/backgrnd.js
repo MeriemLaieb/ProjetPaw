@@ -5,6 +5,9 @@ import { FaTrashAlt } from "react-icons/fa";
 import Notes from "./Notes";
 import Books from "./Books";
 import Nouv from "./Nouv";
+import DateComponent from "./Date";
+import { FaBook } from "react-icons/fa";
+import { BiTask } from "react-icons/bi";
 function Backg(){
     const [corbeille, setCorbeille] = useState(false);
     const [todo, setTodo]= useState(true);
@@ -74,20 +77,20 @@ function Backg(){
         dontShowNouv();
       };
     return(
-        <div className="bckg">
+        <div className='bckg'>
            
         <span className="sidebar" >
-        <aside className="sid">
+        <aside className='sid'>
         {notes ?
         (<Notes/>)
         :
         (
-            <button onClick={handleNotes} className="sid-btn">Notes</button>
+            <button type="button" onClick={handleNotes} className="sid-btn">Notes</button>
         )
         }
         {books ?
         (<main>
-          <h1>Books To Read</h1>
+          <h1 className="book"><FaBook /> Books To Read</h1>
         <Books title="Novel" backgroundColor="#aec6cf" />
         <Books title="Personal Development"  backgroundColor="  #b2e57b"/>
         <Books title="Science" backgroundColor="#c7e8f3" />
@@ -99,22 +102,20 @@ function Backg(){
          <button type="button" onClick={handleBooks} className="sid-btn">Books</button>
         )
         }
-
         {nouv ?
         (<Nouv/>)
         :
         (
           <button className="sid-btn" onClick={handleNouv}>Nouv</button>
         )
-
         }
         <button type="button" className="sid-btn" onClick={handleTodo}>Ajouter une tâche</button>
         </aside>
         </span>
         {todo ?(
         <main>
-            <h1>Daily Tasks</h1>
-        
+            <h1><BiTask /> Daily Tasks</h1>
+            <DateComponent/>
         <ToDoList title="Sport" backgroundColor="#CBEFB6" />
         <ToDoList title="Study"  backgroundColor=" #B6D8F2"/>
         <ToDoList title="Work" backgroundColor="#CACACA" />
