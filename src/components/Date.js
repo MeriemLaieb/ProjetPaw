@@ -18,8 +18,8 @@ const DateComponent = () => {
 
   return (
     <div className="DateComponent">
-      <p className="date">{formattedDate}</p>
-      <p className="heure">{formattedTime}</p>
+      <p className="date">Date : {formattedDate}</p>
+      <p className="heure">Time : {formattedTime}</p>
     </div>
   );
 };
