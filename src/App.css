@@ -279,7 +279,7 @@
   text-decoration: underline;
   margin-bottom: 500px;
   /* margin-left: 50px;  */
-  height: 650px;
+  height: 700px;
   width: 300px;
   margin: left;
 }
@@ -397,15 +397,12 @@
   border-color: transparent;
   cursor: pointer;
 }
-.active {
-  background-color: #ddd; /* Couleur de fond du bouton actif */
-  color: #333; /* Couleur du texte du bouton actif */
-  /* Ajoutez d'autres styles selon vos besoins */
-}
+ .active {
+  background-color: #ddd; 
+  color: #333; 
+} 
 
-/* styles.css */
 
-/* Style pour le conteneur du calendrier */
 .nouv {
   display: flex;
   justify-content: center;
@@ -413,12 +410,40 @@
   height: 100vh; /* Ajustez la hauteur comme vous le souhaitez */
 }
 
-/* styles.css */
-
-/* Style pour le conteneur du calendrier */
 .nouv {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh; /* Ajustez la hauteur comme vous le souhaitez */
 }
+.sid-btn {
+  background-color: transparent;
+  height: 60px;
+  cursor: pointer;
+  border: none;
+}
+.sid-btn :hover{
+  color: #ffbd59;
+}
+.sid-btn h3 {
+  margin: 0; 
+  color: white; 
+  text-decoration: none;
+}
+/* Diviseur entre la date et l'heure */
+.DateComponent {
+  display: flex;
+  justify-content: space-between;
+}
+/* Style spécifique pour la date (alignée à gauche) */
+.DateComponent .date {
+  text-align: left;
+}
+/* Style spécifique pour l'heure (alignée à droite) */
+.DateComponent .heure {
+  text-align: right;
+}
+.book h1{
+  padding-top: 10px;
+}
+

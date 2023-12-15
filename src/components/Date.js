@@ -13,9 +13,13 @@ const DateComponent = () => {
     return () => clearInterval(intervalId);
   }, []); // Le tableau vide en tant que deuxième argument signifie que cet effet s'exécutera uniquement lors du montage du composant
 
+  const formattedDate = currentDate.toLocaleDateString();
+  const formattedTime = currentDate.toLocaleTimeString();
+
   return (
-    <div>
-      <p>{currentDate.toLocaleString()}</p>
+    <div className="DateComponent">
+      <p className="date">{formattedDate}</p>
+      <p className="heure">{formattedTime}</p>
     </div>
   );
 };

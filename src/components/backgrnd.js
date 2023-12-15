@@ -20,34 +20,35 @@ function Backg() {
         <div className='bckg'>
             <span className="sidebar">
                 <div className='sid'>
+                <button
+                        type="button"
+                        onClick={() => handleSectionChange('todo')}
+                        className={`sid-btn ${activeSection === 'todo' ? 'active' : ''}`}
+                    >
+                        <h3 className="sid-titre" >My Day</h3>
+                    </button>
                     <button
                         type="button"
                         onClick={() => handleSectionChange('notes')}
                         className={`sid-btn ${activeSection === 'notes' ? 'active' : ''}`}
                     >
-                        Notes
+                       <h3 className="sid-titre">Notes</h3> 
                     </button>
                     <button
                         type="button"
                         onClick={() => handleSectionChange('books')}
                         className={`sid-btn ${activeSection === 'books' ? 'active' : ''}`}
                     >
-                        <FaBook /> Books
+                       <h3 className="sid-titre"> <FaBook /> Books</h3>
                     </button>
                     <button
                         type="button"
                         onClick={() => handleSectionChange('nouv')}
                         className={`sid-btn ${activeSection === 'nouv' ? 'active' : ''}`}
                     >
-                        Nouv
+                       <h3 className="sid-titre"> Nouv</h3>
                     </button>
-                    <button
-                        type="button"
-                        onClick={() => handleSectionChange('todo')}
-                        className={`sid-btn ${activeSection === 'todo' ? 'active' : ''}`}
-                    >
-                        Ajouter une tâche
-                    </button>
+                    
                 </div>
             </span>
 
@@ -78,6 +79,7 @@ function Backg() {
             {activeSection === 'books' ? (
                 <main>
                     <h1 className="book"><FaBook /> Books To Read</h1>
+                    <DateComponent />
                     <Books title="Novel" backgroundColor="#aec6cf" />
                     <Books title="Personal Development" backgroundColor="#b2e57b" />
                     <Books title="Science" backgroundColor="#c7e8f3" />
