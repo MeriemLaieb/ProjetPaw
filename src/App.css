@@ -36,6 +36,7 @@
 .logo {
   max-width: 100%;
   max-height: 240px; /* Adjust the height as needed */
+  margin-left: 200px;
 }
 
 /* Rest of your existing styles */
@@ -137,7 +138,7 @@
 }
 
 
-.Todo nav img {
+/* .Todo nav img {
   max-width: 100%;
   max-height: 400px;
   position: absolute;
@@ -146,7 +147,7 @@
   justify-content: center;
   display: flex;
   margin-left: 480px;
-}
+} */
 
 /*.Todo .sidebar {
   background: linear-gradient(
@@ -244,7 +245,7 @@
   background-color: rgb(155, 117, 81);
   border: 2px solid #392601;
 }
-div .tout{
+ div .tout{
    padding-right: 5px;
   padding-left: 5px; 
    margin-right: 50px; 
@@ -252,11 +253,11 @@ div .tout{
   display: inline-block;
   position: relative;
   text-align:center; 
-  /* border-radius: 29px; */
+   border-radius: 29px; 
    width: 290px; 
   height:auto
 
-}
+} 
 
 .sid ul {
   list-style: none;
@@ -269,7 +270,7 @@ div .tout{
 .sid{
   background-color: rgba(10, 3, 30, 0.92);
   color: #0a0909;
-  margin-top: 300px;
+  margin-top: 400px;
   display: flex;
   font-weight: bolder;
   flex-direction: column;
@@ -278,7 +279,7 @@ div .tout{
   text-decoration: underline;
   margin-bottom: 500px;
   /* margin-left: 50px;  */
-  height: 80%;
+  height: 650px;
   width: 300px;
   margin: left;
 }
@@ -380,16 +381,9 @@ div .tout{
   display: inline-block;
 }
 .nouv{
-  margin-left: 900px;
+  margin-left: 200px;
   display: inline-block;
 }
-.book{
-  margin-left: 1200px;
-  padding-right: 5px;
-  /* padding-left: 5px; 
-  margin-right: 50px;
-  margin-top: 5px;*/
-}  
 
 .tout{
   display: inline-block;
@@ -402,4 +396,29 @@ div .tout{
   background-color: transparent;
   border-color: transparent;
   cursor: pointer;
+}
+.active {
+  background-color: #ddd; /* Couleur de fond du bouton actif */
+  color: #333; /* Couleur du texte du bouton actif */
+  /* Ajoutez d'autres styles selon vos besoins */
+}
+
+/* styles.css */
+
+/* Style pour le conteneur du calendrier */
+.nouv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajustez la hauteur comme vous le souhaitez */
+}
+
+/* styles.css */
+
+/* Style pour le conteneur du calendrier */
+.nouv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajustez la hauteur comme vous le souhaitez */
 }

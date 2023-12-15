@@ -5,7 +5,7 @@ import NavigationBar from "./Navigationbar";
 import { MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import PageLogin from "./PageLogin";
-
+import { FaPlus } from "react-icons/fa";
 function Books(props) {
   const [showInput, setShowInput] = useState(false);
   const [book, setBook] = useState("");
@@ -47,11 +47,12 @@ function Books(props) {
   };
 
   return (
-    <div className="book">
-      <div className="tout"style={{ backgroundColor: props.backgroundColor }}>
+   
+      
+      <span className="tout"style={{ backgroundColor: props.backgroundColor }}>
         <NavigationBar/>
         <h3>{props.title}</h3>
-        <ul>
+        <ul style={{ listStyle: "none", padding: 0 }}>
           {booksList.map((item) => (
             <li key={item.id}>
               <input
@@ -73,8 +74,8 @@ function Books(props) {
               )}
               {editBookId !== item.id && (
                 <>
-                  <button type="button" onClick={() => handleEdit(item.id)}><CiEdit /></button>
-                  <button onClick={() => handleDelete(item.id)}><MdDelete/></button>
+                  <button className="btn-add" type="button" onClick={() => handleEdit(item.id)}><CiEdit /></button>
+                  <button className="btn-add" onClick={() => handleDelete(item.id)}><MdDelete/></button>
                 </>
               )}
             </li>
@@ -93,10 +94,10 @@ function Books(props) {
             <button onClick={handleAddBook}>OK</button>
           </div>
         ) : (
-          <button onClick={() => setShowInput(true)}>Add Book</button>
+          <button className="btn-add" onClick={() => setShowInput(true)}><FaPlus /> Add Book</button>
         )}
-      </div>
-      </div>
+      </span>
+     
   );
 }
 

@@ -8,130 +8,88 @@ import Nouv from "./Nouv";
 import DateComponent from "./Date";
 import { FaBook } from "react-icons/fa";
 import { BiTask } from "react-icons/bi";
-function Backg(){
-    const [corbeille, setCorbeille] = useState(false);
-    const [todo, setTodo]= useState(true);
-    const [books, setBooks]= useState(false);
-    const [notes, setNotes]= useState(false);
-    const [nouv, setNouv] = useState(false);
-      const showCorbeille = () => {
-        setCorbeille(true);
-      }
-      const dontShowCorbeille = () => {
-        setCorbeille(false);
-      }
-      const showNouv = () => {
-        setNouv(true);
-      }
-      const dontShowNouv = () => {
-        setNouv(false);
-      }
-      const dontShowTodo = () => {
-        setTodo(false);
-      }
-      const showBooks = () => {
-        setBooks(true);
-      }
-      const dontShowBooks = () => {
-        setBooks(false);
-      }
-      const showNotes = () => {
-        setNotes(true);
-      } 
-      const dontShowNotes = () => {
-        setNotes(false);
-      } 
-      const handleNouv = () => {
-        showNouv();
-        dontShowBooks();
-        dontShowCorbeille();
-        dontShowNotes();
-        dontShowTodo();
-      } 
-      const handleCorbeille = () => {
-        showCorbeille();
-        dontShowTodo();
-        dontShowBooks();
-        dontShowNotes();
-        dontShowNouv();
-      };
-      const handleNotes = () => {
-        showNotes();
-        dontShowTodo();
-        dontShowCorbeille();
-        dontShowBooks();
-        dontShowNouv();
-      };
-      const handleBooks = () => {
-        showBooks();
-        dontShowTodo();
-        dontShowCorbeille();
-        dontShowNotes();
-        dontShowNouv();
-      }
-      const handleTodo = () => {
-        setTodo(true);
-        dontShowCorbeille();
-        dontShowBooks();
-        dontShowNotes();
-        dontShowNouv();
-      };
-    return(
+
+function Backg() {
+    const [activeSection, setActiveSection] = useState('todo');
+
+    const handleSectionChange = (section) => {
+        setActiveSection(section);
+    };
+
+    return (
         <div className='bckg'>
-           
-        <span className="sidebar" >
-        <aside className='sid'>
-        {notes ?
-        (<Notes/>)
-        :
-        (
-            <button type="button" onClick={handleNotes} className="sid-btn">Notes</button>
-        )
-        }
-        {books ?
-        (<main>
-          <h1 className="book"><FaBook /> Books To Read</h1>
-        <Books title="Novel" backgroundColor="#aec6cf" />
-        <Books title="Personal Development"  backgroundColor="  #b2e57b"/>
-        <Books title="Science" backgroundColor="#c7e8f3" />
-        <Books title="Religious" backgroundColor="#ffd966"/>
-        </main>
-        )
-        :
-        (
-         <button type="button" onClick={handleBooks} className="sid-btn">Books</button>
-        )
-        }
-        {nouv ?
-        (<Nouv/>)
-        :
-        (
-          <button className="sid-btn" onClick={handleNouv}>Nouv</button>
-        )
-        }
-        <button type="button" className="sid-btn" onClick={handleTodo}>Ajouter une tâche</button>
-        </aside>
-        </span>
-        {todo ?(
-        <main>
-            <h1><BiTask /> Daily Tasks</h1>
-            <DateComponent/>
-        <ToDoList title="Sport" backgroundColor="#CBEFB6" />
-        <ToDoList title="Study"  backgroundColor=" #B6D8F2"/>
-        <ToDoList title="Work" backgroundColor="#CACACA" />
-        <ToDoList title="Health" backgroundColor="#F3E7DA"/>
-        <ToDoList title="Personnal" backgroundColor="#F5DF4D"/>
-       
-      </main>
-        ):("")}
-         {corbeille ?
-        (<Corbeille/>)
-        :
-        (
-            <button onClick={handleCorbeille}><FaTrashAlt /></button>
-        )
-        }
+            <span className="sidebar">
+                <div className='sid'>
+                    <button
+                        type="button"
+                        onClick={() => handleSectionChange('notes')}
+                        className={`sid-btn ${activeSection === 'notes' ? 'active' : ''}`}
+                    >
+                        Notes
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => handleSectionChange('books')}
+                        className={`sid-btn ${activeSection === 'books' ? 'active' : ''}`}
+                    >
+                        <FaBook /> Books
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => handleSectionChange('nouv')}
+                        className={`sid-btn ${activeSection === 'nouv' ? 'active' : ''}`}
+                    >
+                        Nouv
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => handleSectionChange('todo')}
+                        className={`sid-btn ${activeSection === 'todo' ? 'active' : ''}`}
+                    >
+                        Ajouter une tâche
+                    </button>
+                </div>
+            </span>
+
+            {activeSection === 'todo' ? (
+                <main>
+                    <h1><BiTask /> Daily Tasks</h1>
+                    <DateComponent />
+                    <ToDoList title="Sport" backgroundColor="#CBEFB6" />
+                    <ToDoList title="Study" backgroundColor=" #B6D8F2" />
+                    <ToDoList title="Work" backgroundColor="#CACACA" />
+                    <ToDoList title="Health" backgroundColor="#F3E7DA" />
+                    <ToDoList title="Personnal" backgroundColor="#F5DF4D" />
+                </main>
+            ) : null}
+
+            {activeSection === 'corbeille' ? (
+                <Corbeille />
+            ) : (
+                <button onClick={() => handleSectionChange('corbeille')}>
+                    <FaTrashAlt />
+                </button>
+            )}
+
+            {activeSection === 'notes' ? (
+                <Notes />
+            ) : null}
+
+            {activeSection === 'books' ? (
+                <main>
+                    <h1 className="book"><FaBook /> Books To Read</h1>
+                    <Books title="Novel" backgroundColor="#aec6cf" />
+                    <Books title="Personal Development" backgroundColor="#b2e57b" />
+                    <Books title="Science" backgroundColor="#c7e8f3" />
+                    <Books title="Religious" backgroundColor="#ffd966" />
+                </main>
+            ) : null}
+
+            {activeSection === 'nouv' ? (
+                <Nouv />
+            ) : null}
         </div>
-    )
+    );
 }
-export default Backg
+
+export default Backg;
