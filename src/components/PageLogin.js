@@ -27,11 +27,8 @@ function PageLogin() {
     <div className="formInput">
       <NavigationBar/>
       {showToDoList ? 
-      (//ida ma mchatch nraj3 <Backg/>
-      <>
-      <NavigationBar onAboutClick={handleAboutClick} />
-      <Backg aboutActive={aboutActive} />
-      </>
+      (
+     <Backg  />   
       ) : (
       showSignUpForm ? (
         <Formulaire />

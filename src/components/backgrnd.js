@@ -71,7 +71,7 @@ function Backg() {
                     <h1 className="note-title" ><FaRegNoteSticky />Notes</h1>
                     <DateComponent />
                 <Notes title="Notes" backgroundColor="#FFEB69"/>
-                <Notes title="Ideas" backgroundColor="#F4CFDF" />
+                <Notes title="Ideas" backgroundColor="#F4A261" />
                 
                 </main>
             ) : null}
