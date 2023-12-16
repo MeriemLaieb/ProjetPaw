@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Formulaire from "./Formulaire";
 import Logo2 from "./Logo2.png";
-import Tasky3 from "./Tasky3.png"
 import PageLogin from "./PageLogin";
 import First from "./First";
 function Logo() {
