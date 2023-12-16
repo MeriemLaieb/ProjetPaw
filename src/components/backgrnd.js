@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ToDoList from "./ToDoList";
-import Corbeille from "./Corbeille";
 import { FaTrashAlt } from "react-icons/fa";
 import Notes from "./Notes";
 import Books from "./Books";
@@ -10,6 +9,8 @@ import { FaBook } from "react-icons/fa";
 import { BiTask } from "react-icons/bi";
 import { FaRegNoteSticky } from "react-icons/fa6";
 import { FaRegCalendarAlt } from "react-icons/fa";
+import { TiShoppingCart } from "react-icons/ti";
+import ShoppingList from "./Shopping";
 function Backg() {
     const [activeSection, setActiveSection] = useState('todo');
 
@@ -47,7 +48,7 @@ function Backg() {
                         onClick={() => handleSectionChange('nouv')}
                         className={`sid-btn ${activeSection === 'nouv' ? 'active' : ''}`}
                     >
-                       <h3 className="sid-titre"><FaRegCalendarAlt /> Calendar</h3>
+                       <h3 className="sid-titre"><TiShoppingCart /> Shopping</h3>
                     </button>
                     
                 </div>
@@ -62,23 +63,16 @@ function Backg() {
                     <ToDoList title="Work" backgroundColor="#CACACA" />
                     <ToDoList title="Health" backgroundColor="#F3E7DA" />
                     <ToDoList title="Personnal" backgroundColor="#F5DF4D" />
+                    <ToDoList title="Others" backgroundColor="#F4A261" />
                 </main>
             ) : null}
-
-            {activeSection === 'corbeille' ? (
-                <Corbeille />
-            ) : (
-                <button onClick={() => handleSectionChange('corbeille')}>
-                    <FaTrashAlt />
-                </button>
-            )}
-
             {activeSection === 'notes' ? (
-                <main className="cont">
-                    <h1><FaRegNoteSticky /> Notes</h1>
+                <main>
+                    <h1 className="note-title" ><FaRegNoteSticky />Notes</h1>
                     <DateComponent />
                 <Notes title="Notes" backgroundColor="#FFEB69"/>
                 <Notes title="Ideas" backgroundColor="#F4CFDF" />
+                
                 </main>
             ) : null}
 
@@ -86,17 +80,22 @@ function Backg() {
                 <main>
                     <h1 className="section-title"><FaBook /> Books To Read</h1>
                     <DateComponent />
-                    <Books title="Novel" backgroundColor="#aec6cf" />
+                    <Books title="Novel" backgroundColor="#F3E7DA" />
                     <Books title="Personal Development" backgroundColor="#b2e57b" />
                     <Books title="Science" backgroundColor="#c7e8f3" />
                     <Books title="Religious" backgroundColor="#ffd966" />
+                    <Books title="Others" backgroundColor="#F4A261" />
                 </main>
             ) : null}
 
             {activeSection === 'nouv' ? (
                 <main>
-                <h1> <FaRegCalendarAlt /> Calendar</h1>
-                <Nouv />
+                    <h1><TiShoppingCart /> Shopping List</h1>
+                    <DateComponent/>
+                <ShoppingList title="For Kitchen" backgroundColor="#b2e57b" />
+                <ShoppingList title="For Home" backgroundColor="#B6D8F2"/>
+                <ShoppingList title="For Me" backgroundColor="#F3E7DA" />
+                <ShoppingList title="Others" backgroundColor="#F4A261" />
                 </main>
             ) : null}
         </div>

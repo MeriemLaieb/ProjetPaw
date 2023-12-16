@@ -11,7 +11,7 @@ function MyCalendar() {
 
   return (
     <div className="nouv">
-      
+     <div className="cal-title"><h1>Calendar</h1></div> 
       <Calendar onChange={onChange} value={date} />
     </div>
   );

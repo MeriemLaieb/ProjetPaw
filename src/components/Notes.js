@@ -51,7 +51,6 @@ function Notes(props) {
   return (
     <span className="ideas" style={{ backgroundColor: props.backgroundColor }}>
       <NavigationBar />
-
       <h3>{props.title}</h3>
       <ul style={{ listStyle: "none", padding: 0 }}>
         {notesList.map((item) => (

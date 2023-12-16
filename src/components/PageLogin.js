@@ -18,29 +18,39 @@ function PageLogin() {
     setShowToDoList(true);
   }
 
- 
+  const [aboutActive, setAboutActive] = useState(false);
+
+  const handleAboutClick = () => {
+    setAboutActive(true);
+  };
   return (
     <div className="formInput">
       <NavigationBar/>
-      {showToDoList ? (
-      <Backg/>) : (
+      {showToDoList ? 
+      (//ida ma mchatch nraj3 <Backg/>
+      <>
+      <NavigationBar onAboutClick={handleAboutClick} />
+      <Backg aboutActive={aboutActive} />
+      </>
+      ) : (
       showSignUpForm ? (
         <Formulaire />
       ) : (
         <form className="formu">
-          <h2>Log In</h2>
-          <label htmlFor="mail">Email :</label>
+          <h2  style={{color:"white"}}>Log In</h2>
+          <label  style={{color:" #ffbd59"}} htmlFor="mail">Email :</label>
           <input
             type="email"
             id="mail"
             name="email"
             required
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)} className="inpt"
           />
           <br />
-          <label htmlFor="pass">Password :</label>
+          <label  style={{color:" #ffbd59"}} htmlFor="pass">Password :</label>
           <input
+            className="inpt"
             type="password"
             id="pass"
             name="password"

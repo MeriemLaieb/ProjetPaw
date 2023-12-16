@@ -57,10 +57,12 @@ function ToDoList(props) {
         <ul style={{ listStyle: "none", padding: 0 }}>
           {tasksList.map((item) => (
             <li key={item.id}>
+              
               <input
                 type="checkbox"
                 checked={item.done}
                 onChange={() => handleToggle(item.id)}
+
               />
               {editTaskId === item.id ? (
                 <div>
